@@ -15,12 +15,12 @@ body{
 }
 .intro{ 
 	@media screen and  (max-width: 700px){
-		background-image: url(images/bannersmall.svg);
+		background-image: url(bannersmall.svg);
 		opacity: 0.7;
 		background-size: 100% auto;
 	}
 	@media  screen and (min-width: 700px){
-		background-image: url(images/banneropaque.png);	
+		background-image: url( banneropaque.png);	
 		background-size: 100% auto;	
 		grid-column: span 3;
 		grid-row: 1/2;
@@ -57,16 +57,16 @@ body{
 }
 
 // .page-wraher>#zen-preamble::before, .mainsupporting > div:nth-child(even):before {
-// 	@include atoms.side-image(70%, 17%, -200px, url(images/bannersmall.svg))
+// 	@include atoms.side-image(70%, 17%, -200px, url(bannersmall.svg))
 // }
 #zen-preamble::before{
 	@media screen and  (max-width: 900px){
-		@include atoms.side-image(200px, 200px, -50%, url(images/singlerose.png));
+		@include atoms.side-image(200px, 200px, -50%, url(singlerose.png));
 		animation: appear 10s linear infinite;		
 	}
 
 	@media screen and  (min-width: 900px){
-		@include atoms.side-image(250px, 200px, -15%, url(images/singlerose.png));
+		@include atoms.side-image(250px, 200px, -15%, url(singlerose.png));
 		animation: appear 10s linear infinite;		
 	}
 	
@@ -74,26 +74,26 @@ body{
 #zen-explanation::before{
 	
 	@media screen and (max-width: 900px){
-		@include atoms.side-image(25%, 35%, 47%, url(images/yellowflower.png));
+		@include atoms.side-image(25%, 35%, 47%, url(yellowflower.png));
 		animation: appear 10s linear infinite;	
 	}
 	@media screen and (min-width: 900px){
-		@include atoms.side-image(25%, 35%, 55%, url(images/yellowflower.png));
+		@include atoms.side-image(25%, 35%, 55%, url(yellowflower.png));
 		animation: appear 10s linear infinite;	
 	}
 }
 
 #zen-participation::before{
-	@include atoms.side-image(100%, 100%, -290px, url(images/lightpinkpeony.png));
+	@include atoms.side-image(100%, 100%, -290px, url(lightpinkpeony.png));
 	animation: appear 10s linear infinite;
 }
 #zen-benefits::before{
-	@include atoms.side-image(100%, 100%, 850px, url(images/mediumpinkpeony.png));
+	@include atoms.side-image(100%, 100%, 850px, url(mediumpinkpeony.png));
 	animation: appear 10s linear infinite;
 }
 
 #zen-requirements::before{
-	@include atoms.side-image(85%, 60%, -350px, url(images/LongFlower.png));
+	@include atoms.side-image(85%, 60%, -350px, url(LongFlower.png));
 	animation: appear 10s linear infinite;
 }
 @keyframes appear {

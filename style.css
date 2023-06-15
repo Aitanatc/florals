@@ -86,14 +86,14 @@ body {
 
 @media screen and (max-width: 700px) {
   .intro {
-    background-image: url(images/bannersmall.svg);
+    background-image: url(bannersmall.svg);
     opacity: 0.7;
     background-size: 100% auto;
   }
 }
 @media screen and (min-width: 700px) {
   .intro {
-    background-image: url(images/banneropaque.png);
+    background-image: url(banneropaque.png);
     background-size: 100% auto;
     grid-column: span 3;
     grid-row: 1/2;
@@ -138,7 +138,7 @@ body {
     height: 200px;
     margin-top: 80px;
     margin-left: -50%;
-    background-image: url(images/singlerose.png);
+    background-image: url(singlerose.png);
     background-repeat: no-repeat;
     animation: appear 10s linear infinite;
   }
@@ -151,7 +151,7 @@ body {
     height: 200px;
     margin-top: 80px;
     margin-left: -15%;
-    background-image: url(images/singlerose.png);
+    background-image: url(singlerose.png);
     background-repeat: no-repeat;
     animation: appear 10s linear infinite;
   }
@@ -165,7 +165,7 @@ body {
     height: 35%;
     margin-top: 80px;
     margin-left: 47%;
-    background-image: url(images/yellowflower.png);
+    background-image: url(yellowflower.png);
     background-repeat: no-repeat;
     animation: appear 10s linear infinite;
   }
@@ -178,7 +178,7 @@ body {
     height: 35%;
     margin-top: 80px;
     margin-left: 55%;
-    background-image: url(images/yellowflower.png);
+    background-image: url(yellowflower.png);
     background-repeat: no-repeat;
     animation: appear 10s linear infinite;
   }
@@ -191,7 +191,7 @@ body {
   height: 100%;
   margin-top: 80px;
   margin-left: -290px;
-  background-image: url(images/lightpinkpeony.png);
+  background-image: url(lightpinkpeony.png);
   background-repeat: no-repeat;
   animation: appear 10s linear infinite;
 }
@@ -203,7 +203,7 @@ body {
   height: 100%;
   margin-top: 80px;
   margin-left: 850px;
-  background-image: url(images/mediumpinkpeony.png);
+  background-image: url(mediumpinkpeony.png);
   background-repeat: no-repeat;
   animation: appear 10s linear infinite;
 }
@@ -215,7 +215,7 @@ body {
   height: 60%;
   margin-top: 80px;
   margin-left: -350px;
-  background-image: url(images/LongFlower.png);
+  background-image: url(LongFlower.png);
   background-repeat: no-repeat;
   animation: appear 10s linear infinite;
 }
