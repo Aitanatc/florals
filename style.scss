@@ -1,0 +1,146 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+
+@use "variables";
+@use "atoms";
+@use "molecules";
+@use "organisms";
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap');
+
+/* basic elements */
+body{
+	padding: 2em;
+}
+.intro{ 
+	@media screen and  (max-width: 700px){
+		background-image: url(images/bannersmall.svg);
+		opacity: 0.7;
+		background-size: 100% auto;
+	}
+	@media  screen and (min-width: 700px){
+		background-image: url(images/banneropaque.png);	
+		background-size: 100% auto;	
+		grid-column: span 3;
+		grid-row: 1/2;
+	}
+}
+.preamble, .mainsupporting, .participation, .benefits, .requirements{
+	text-align: justify;
+	h3{
+		text-align: left;
+	}
+
+	@media screen and (max-width: 700px){
+		text-align: right;
+		p{
+			text-align: justify;
+		}
+		
+	}
+}
+.page-wraher{
+	display: grid;
+	grid-template-columns: 22% 1fr 22%;
+	// grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+	grid-gap: 1em;
+	& > .preamble, .mainsupporting, footer{
+		grid-column: 2/3;
+	}
+	.intro{
+		grid-row: 1/2;
+	}
+	.preamble{
+		grid-row: 2/3;
+	}
+}
+
+// .page-wraher>#zen-preamble::before, .mainsupporting > div:nth-child(even):before {
+// 	@include atoms.side-image(70%, 17%, -200px, url(images/bannersmall.svg))
+// }
+#zen-preamble::before{
+	@media screen and  (max-width: 900px){
+		@include atoms.side-image(200px, 200px, -50%, url(images/singlerose.png));
+		animation: appear 10s linear infinite;		
+	}
+
+	@media screen and  (min-width: 900px){
+		@include atoms.side-image(250px, 200px, -15%, url(images/singlerose.png));
+		animation: appear 10s linear infinite;		
+	}
+	
+}
+#zen-explanation::before{
+	
+	@media screen and (max-width: 900px){
+		@include atoms.side-image(25%, 35%, 47%, url(images/yellowflower.png));
+		animation: appear 10s linear infinite;	
+	}
+	@media screen and (min-width: 900px){
+		@include atoms.side-image(25%, 35%, 55%, url(images/yellowflower.png));
+		animation: appear 10s linear infinite;	
+	}
+}
+
+#zen-participation::before{
+	@include atoms.side-image(100%, 100%, -290px, url(images/lightpinkpeony.png));
+	animation: appear 10s linear infinite;
+}
+#zen-benefits::before{
+	@include atoms.side-image(100%, 100%, 850px, url(images/mediumpinkpeony.png));
+	animation: appear 10s linear infinite;
+}
+
+#zen-requirements::before{
+	@include atoms.side-image(85%, 60%, -350px, url(images/LongFlower.png));
+	animation: appear 10s linear infinite;
+}
+@keyframes appear {
+	0% {
+		opacity: 0;
+	  }
+	  50% {
+		opacity: 1;
+	  }
+	  100% {
+		opacity: 0;
+	  }
+  }
+//   @keyframes appear {
+// 	0% {
+// 	  background-position: 0 0;
+// 	}
+// 	100% {
+// 	  background-position: 100% 0;
+// 	}
+//   }
+
+
+.sidebar{
+	grid-column: span 3;
+}
+.wrapper{
+	display: grid;
+	grid-template-columns: 1.5fr 1fr 1fr;
+	padding: 1em;
+	column-gap: 2em;
+	h3{
+		text-align: center;
+	}
+	.design-selection, .design-archives, .zen-resources{
+		background-color: variables.$accent3;
+		.design-selection, .design-archives, .zen-resources{
+			background-color: variables.$accent3;
+			will-change: transform;
+			  transition: transform 450ms;
+		   }
+		  }
+		  .design-selection:hover, .design-archives:hover, .zen-resources:hover {
+		   background-color:lightgray;
+		   transform: translateY(50px);
+			}
+
+
+	}
+
