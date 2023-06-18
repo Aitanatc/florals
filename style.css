@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap"); /* css Zen Garden default style v1.02 */
-/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap"); /* css Zen Garden*/
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
 h2,
@@ -82,21 +81,32 @@ a:hover {
 /* basic elements */
 body {
   padding: 2em;
+  width: 1000px;
+  margin: auto;
+  background-image: radial-gradient(#f2ebf5 15%, transparent 15%), radial-gradient(#f2ebf5 15%, transparent 15%);
+  background-size: 30px 30px;
+  background-position: 0 0, 40px 40px;
 }
-
 @media screen and (max-width: 700px) {
-  .intro {
-    background-image: url(bannersmall.svg);
-    opacity: 0.7;
-    background-size: 100% auto;
+  body {
+    width: auto;
+    margin: auto;
+    padding: 1em;
+    background-size: 20px 20px;
   }
 }
-@media screen and (min-width: 700px) {
+
+.intro {
+  background-image: url(banneropaque.png);
+  background-size: 100% auto;
+  grid-column: span 3;
+  grid-row: 1/2;
+}
+@media screen and (max-width: 700px) {
   .intro {
     background-image: url(banneropaque.png);
     background-size: 100% auto;
     grid-column: span 3;
-    grid-row: 1/2;
   }
 }
 
@@ -123,101 +133,150 @@ body {
 .page-wraher > .preamble, .page-wraher .mainsupporting, .page-wraher footer {
   grid-column: 2/3;
 }
-.page-wraher .intro {
-  grid-row: 1/2;
-}
-.page-wraher .preamble {
-  grid-row: 2/3;
-}
-
-@media screen and (max-width: 900px) {
-  #zen-preamble::before {
-    content: " ";
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    margin-top: 80px;
-    margin-left: -50%;
-    background-image: url(singlerose.png);
-    background-repeat: no-repeat;
-    animation: appear 10s linear infinite;
-  }
-}
-@media screen and (min-width: 900px) {
-  #zen-preamble::before {
-    content: " ";
-    position: absolute;
-    width: 250px;
-    height: 200px;
-    margin-top: 80px;
-    margin-left: -15%;
-    background-image: url(singlerose.png);
-    background-repeat: no-repeat;
-    animation: appear 10s linear infinite;
+@media screen and (max-width: 700px) {
+  .page-wraher {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width: 900px) {
-  #zen-explanation::before {
-    content: " ";
-    position: absolute;
-    width: 25%;
-    height: 35%;
-    margin-top: 80px;
-    margin-left: 47%;
-    background-image: url(yellowflower.png);
+#zen-preamble, #zen-explanation, #zen-participation, #zen-benefits, #zen-requirements {
+  position: relative;
+}
+
+#zen-preamble::before {
+  content: "";
+  background-image: url(singlerose.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  position: absolute;
+  top: 0;
+  left: -230px;
+  width: 100%;
+  height: 100%;
+  animation: appear 10s linear infinite;
+}
+@media screen and (max-width: 700px) {
+  #zen-preamble::before {
+    content: "";
+    background-image: url(singlerose.png);
     background-repeat: no-repeat;
-    animation: appear 10s linear infinite;
+    background-position: left center;
+    position: absolute;
+    top: 0;
+    left: -230px;
+    width: 100%;
+    height: 100%;
+    animation: appear-down 10s linear;
   }
 }
-@media screen and (min-width: 900px) {
+
+#zen-explanation::before {
+  content: "";
+  background-image: url(yellowflower.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  position: absolute;
+  top: 0;
+  right: -255px;
+  width: 100%;
+  height: 100%;
+  animation: appear 10s linear infinite;
+}
+@media screen and (max-width: 700px) {
   #zen-explanation::before {
-    content: " ";
-    position: absolute;
-    width: 25%;
-    height: 35%;
-    margin-top: 80px;
-    margin-left: 55%;
+    content: "";
     background-image: url(yellowflower.png);
     background-repeat: no-repeat;
-    animation: appear 10s linear infinite;
+    background-position: left center;
+    position: absolute;
+    top: 0;
+    left: -260px;
+    width: 100%;
+    height: 100%;
+    animation: appear-down 10s linear;
   }
 }
 
 #zen-participation::before {
-  content: " ";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin-top: 80px;
-  margin-left: -290px;
+  content: "";
   background-image: url(lightpinkpeony.png);
   background-repeat: no-repeat;
+  background-position: left center;
+  position: absolute;
+  top: 0;
+  left: -260px;
+  width: 100%;
+  height: 100%;
   animation: appear 10s linear infinite;
+}
+@media screen and (max-width: 700px) {
+  #zen-participation::before {
+    content: "";
+    background-image: url(lightpinkpeony.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 100%;
+    height: 100%;
+    animation: appear-down 10s linear;
+  }
 }
 
 #zen-benefits::before {
-  content: " ";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin-top: 80px;
-  margin-left: 850px;
+  content: "";
   background-image: url(mediumpinkpeony.png);
   background-repeat: no-repeat;
+  background-position: right center;
+  position: absolute;
+  top: 0;
+  right: -270px;
+  width: 100%;
+  height: 100%;
   animation: appear 10s linear infinite;
+}
+@media screen and (max-width: 700px) {
+  #zen-benefits::before {
+    content: "";
+    background-image: url(mediumpinkpeony.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 100%;
+    height: 100%;
+    animation: appear-down 10s linear;
+  }
 }
 
 #zen-requirements::before {
-  content: " ";
-  position: absolute;
-  width: 85%;
-  height: 60%;
-  margin-top: 80px;
-  margin-left: -350px;
+  content: "";
   background-image: url(LongFlower.png);
   background-repeat: no-repeat;
+  background-position: left center;
+  position: absolute;
+  top: 0;
+  left: -320px;
+  width: 100%;
+  height: 100%;
   animation: appear 10s linear infinite;
+}
+@media screen and (max-width: 700px) {
+  #zen-requirements::before {
+    content: "";
+    background-image: url(LongFlower.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    position: absolute;
+    top: 0;
+    left: -315px;
+    width: 100%;
+    height: 100%;
+    animation: appear-down 10s linear;
+  }
 }
 
 @keyframes appear {
@@ -231,8 +290,24 @@ body {
     opacity: 0;
   }
 }
+@keyframes appear-down {
+  0% {
+    top: -10%;
+  }
+  50% {
+    top: 30%;
+  }
+  100% {
+    top: 0;
+  }
+}
 .sidebar {
   grid-column: span 3;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    grid-column: span 2;
+  }
 }
 
 .wrapper {
@@ -246,15 +321,27 @@ body {
 }
 .wrapper .design-selection, .wrapper .design-archives, .wrapper .zen-resources {
   background-color: #f2becb;
-}
-.wrapper .design-selection .design-selection, .wrapper .design-selection .design-archives, .wrapper .design-selection .zen-resources, .wrapper .design-archives .design-selection, .wrapper .design-archives .design-archives, .wrapper .design-archives .zen-resources, .wrapper .zen-resources .design-selection, .wrapper .zen-resources .design-archives, .wrapper .zen-resources .zen-resources {
-  background-color: #f2becb;
   will-change: transform;
   transition: transform 450ms;
+  border-radius: 0 0 25% 25%;
 }
 .wrapper .design-selection:hover, .wrapper .design-archives:hover, .wrapper .zen-resources:hover {
   background-color: lightgray;
   transform: translateY(50px);
+}
+@media screen and (max-width: 700px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+  .wrapper .design-selection, .wrapper .design-archives, .wrapper .zen-resources {
+    border-radius: 0 50% 50% 0;
+  }
+  .wrapper .design-selection:hover, .wrapper .design-archives:hover, .wrapper .zen-resources:hover {
+    background-color: lightgray;
+    transform: translateX(50px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

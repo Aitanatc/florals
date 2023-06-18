@@ -23,16 +23,29 @@
   margin-top: 1em;
   padding-top: 1.5em;
 }
-@mixin side-image ( $width, $height, $left, $image ) {
-  content: " ";
-  position: absolute;
-  width: $width;
-  height: $height;
-  margin-top: 80px;
-  margin-left: $left;
+@mixin side-image-left ($image, $left) {
+  content: "";
   background-image: $image;
-  background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	background-position: left center; 
+	position: absolute;
+  top: 0;
+	left: $left;
+	width: 100%; 
+	height: 100%;
 }
+@mixin side-image-right ($image, $right) {
+  content: "";
+  background-image: $image;
+	background-repeat: no-repeat;
+	background-position: right center; 
+	position: absolute;
+  top: 0;
+	right: $right;
+	width: 100%; 
+	height: 100%;
+}
+
 
 // these styles here should describe how the atoms (elements) should appear most of the time.  They can be overridden at the molecule (block) as necessary
 h2,
