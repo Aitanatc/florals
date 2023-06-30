@@ -8,15 +8,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap');
 
 /* basic elements */
-
+//Body styling using radial-gradients that change size based on the large screen or small screen.
 body{
 	padding: 2em;
 	width: 1000px;
 	margin: auto;
-	background-image: radial-gradient(variables.$background-color 15%, transparent 15%),
-	  radial-gradient(variables.$background-color 15%, transparent 15%);
-	background-size: 30px 30px;
-	background-position: 0 0, 40px 40px;
+	background-color: variables.$background-color;
+	background-image: radial-gradient(white 15%, transparent 20%),
+	  radial-gradient(white 15%, transparent 20%);
+	background-size: 50px 50px;
+	background-position: 0 0, 30px 30px;
 	@media screen and  (max-width: 700px){
 		width: auto;
 		margin: auto;
@@ -143,14 +144,18 @@ body{
 		grid-column: span 2;
 	}
 }
+//Grid container for the three pink boxes at the bottom of the page.
 .wrapper{
 	display: grid;
 	grid-template-columns: 1.5fr 1fr 1fr;
 	padding: 1em;
 	column-gap: 2em;
+	height: 350px;
 	h3{
 		text-align: center;
+		padding: 25px;
 	}
+	//This section styles the three pink boxes at the bottom of the page.
 	.design-selection, .design-archives, .zen-resources{
 			background-color: variables.$accent3;
 			will-change: transform;
@@ -158,20 +163,60 @@ body{
 			border-radius: 0 0 25% 25%;
 
 		   }
+		   //Hover causes a color change and a transform moving the boxes down.
 		  .design-selection:hover, .design-archives:hover, .zen-resources:hover {
-		   background-color:lightgray;
+		   background-color: rgb(235, 232, 232);
 		   transform: translateY(50px);
 			}
+		//Styling the flowers for the pink boxes
+			.design-selection {
+				background-repeat: no-repeat;
+				background-position: center bottom;
+				background-size: 95px;
+				animation: image1 10s infinite alternate;
+			  }
+			  .design-archives {
+				background-repeat: no-repeat;
+				background-position: center bottom;
+				background-size: 95px;
+				animation: image2 10s infinite alternate;
+			  }
+			  .zen-resources {
+				background-repeat: no-repeat;
+				background-position: center bottom;
+				background-size: 95px;
+				animation: image3 10s infinite alternate;
+			  }
+			  //Animation for the flowers in the pink boxes
+			  @keyframes image1 {
+				0%{background-image:url(sunflower.png);}
+				33%{background-image:url(lightpinkpeony.png);}
+				66%{background-image:url(yellowflower.png);}
+				100%{background-image:url(pinkrose.png);}
+			  }
+			  @keyframes image2 {
+				0%{background-image:url(pinkrose.png);}
+				33%{background-image:url(peachpeony.png);}
+				66%{background-image:url(sunflower.png);}
+				100%{background-image:url(lightpinkpeony.png);}
+			  }
+			  @keyframes image3 {
+				0%{background-image:url(lightpinkpeony.png);}
+				33%{background-image:url(yellowflower.png);}
+				66%{background-image:url(peachpeony.png);}
+				100%{background-image:url(mediumpinkpeony.png);}
+			  }
 	@media screen and  (max-width: 700px){
 		display: grid;
 		grid-template-columns: 1fr;
 		row-gap: 10px;
-		.design-selection, .design-archives, .zen-resources{
+		.design-selection, .design-archives, .zen-resources {
 			border-radius: 0 50% 50% 0;
+			background-position: left top;
 			
 		   }
 		.design-selection:hover, .design-archives:hover, .zen-resources:hover {
-			background-color:lightgray;
+			background-color: rgb(235, 232, 232);
 			transform: translateX(50px);
 			 }
 

@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap"); /* css Zen Garden*/
+/* css Zen Garden*/
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
 h2,
@@ -70,10 +68,12 @@ a:hover {
   text-align: right;
 }
 
+/* We should remove the white background here unless we want it on all of the paragraphs.
 .preamble {
   background: rgba(255, 255, 255, 0.9);
+  // margin-left: -30%;
 }
-
+*/
 .intro {
   padding: 2%;
 }
@@ -83,9 +83,10 @@ body {
   padding: 2em;
   width: 1000px;
   margin: auto;
-  background-image: radial-gradient(#f2ebf5 15%, transparent 15%), radial-gradient(#f2ebf5 15%, transparent 15%);
-  background-size: 30px 30px;
-  background-position: 0 0, 40px 40px;
+  background-color: #f8f5f9;
+  background-image: radial-gradient(white 15%, transparent 20%), radial-gradient(white 15%, transparent 20%);
+  background-size: 50px 50px;
+  background-position: 0 0, 30px 30px;
 }
 @media screen and (max-width: 700px) {
   body {
@@ -315,9 +316,11 @@ body {
   grid-template-columns: 1.5fr 1fr 1fr;
   padding: 1em;
   column-gap: 2em;
+  height: 350px;
 }
 .wrapper h3 {
   text-align: center;
+  padding: 25px;
 }
 .wrapper .design-selection, .wrapper .design-archives, .wrapper .zen-resources {
   background-color: #f2becb;
@@ -326,8 +329,68 @@ body {
   border-radius: 0 0 25% 25%;
 }
 .wrapper .design-selection:hover, .wrapper .design-archives:hover, .wrapper .zen-resources:hover {
-  background-color: lightgray;
+  background-color: rgb(235, 232, 232);
   transform: translateY(50px);
+}
+.wrapper .design-selection {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 95px;
+  animation: image1 10s infinite alternate;
+}
+.wrapper .design-archives {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 95px;
+  animation: image2 10s infinite alternate;
+}
+.wrapper .zen-resources {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 95px;
+  animation: image3 10s infinite alternate;
+}
+@keyframes image1 {
+  0% {
+    background-image: url(sunflower.png);
+  }
+  33% {
+    background-image: url(lightpinkpeony.png);
+  }
+  66% {
+    background-image: url(yellowflower.png);
+  }
+  100% {
+    background-image: url(pinkrose.png);
+  }
+}
+@keyframes image2 {
+  0% {
+    background-image: url(pinkrose.png);
+  }
+  33% {
+    background-image: url(peachpeony.png);
+  }
+  66% {
+    background-image: url(sunflower.png);
+  }
+  100% {
+    background-image: url(lightpinkpeony.png);
+  }
+}
+@keyframes image3 {
+  0% {
+    background-image: url(lightpinkpeony.png);
+  }
+  33% {
+    background-image: url(yellowflower.png);
+  }
+  66% {
+    background-image: url(peachpeony.png);
+  }
+  100% {
+    background-image: url(mediumpinkpeony.png);
+  }
 }
 @media screen and (max-width: 700px) {
   .wrapper {
@@ -337,9 +400,10 @@ body {
   }
   .wrapper .design-selection, .wrapper .design-archives, .wrapper .zen-resources {
     border-radius: 0 50% 50% 0;
+    background-position: left top;
   }
   .wrapper .design-selection:hover, .wrapper .design-archives:hover, .wrapper .zen-resources:hover {
-    background-color: lightgray;
+    background-color: rgb(235, 232, 232);
     transform: translateX(50px);
   }
 }
