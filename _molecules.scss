@@ -2,7 +2,7 @@
 @use 'variables';
 @use 'atoms';
 
-// use the mixins from the atoms module to compose our molecules. If you prefer the terminology 'blocks' and 'elements' feel free to use it instead!
+//Use the mixins from the atoms module to compose our molecules. If you prefer the terminology 'blocks' and 'elements' feel free to use it instead!
 //The base styling we made on our atoms (elements) does most of the work...here we would make any modifications on the elements if they need to appear differently in a certain molecule (block)
 
 .summary {
@@ -15,9 +15,3 @@
     text-align: right;
   }
 }
-/* We should remove the white background here unless we want it on all of the paragraphs.
-.preamble {
-  background: rgba(255, 255, 255, 0.9);
-  // margin-left: -30%;
-}
-*/

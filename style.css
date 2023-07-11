@@ -1,6 +1,19 @@
 /* css Zen Garden*/
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
+.summary a {
+  color: #150606;
+  font-family: "Courgette", cursive;
+}
+.summary p {
+  font-family: "Courgette", cursive;
+  text-align: right;
+}
+
+.intro {
+  padding: 2%;
+}
+
 h2,
 h3,
 h4 {
@@ -8,36 +21,18 @@ h4 {
   margin: 0;
 }
 
-h1 {
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #3E777A;
-  font-family: "Forum";
-  font-size: 4em;
-}
-
 h2 {
   color: #3E777A;
-  font-weight: 400; /* Heavy */
+  font-weight: 400;
   letter-spacing: 1px;
   line-height: 1em;
 }
 
 h3 {
   font-size: 2.25em;
-  font-weight: 200; /* Thin */
+  font-weight: 200;
   letter-spacing: 1px;
-  line-height: 1em;
   padding: 0.5em 0 0.25em 0;
-}
-
-h4 {
-  font-size: 1.5em;
-  font-weight: 200; /* Thin */
-  letter-spacing: 1px;
-  line-height: 1em;
-  margin: 0.5em 0;
 }
 
 p {
@@ -49,7 +44,6 @@ p {
 }
 
 a {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: #3E777A;
   text-decoration: none;
   transition: border-color 0.2s ease-in-out;
@@ -59,26 +53,9 @@ a:hover {
   border-color: #3E777A;
 }
 
-.summary a {
-  color: #150606;
-  font-family: "Courgette", cursive;
-}
-.summary p {
-  font-family: "Courgette", cursive;
-  text-align: right;
-}
-
-/* We should remove the white background here unless we want it on all of the paragraphs.
-.preamble {
-  background: rgba(255, 255, 255, 0.9);
-  // margin-left: -30%;
-}
-*/
-.intro {
-  padding: 2%;
-}
-
-/* basic elements */
+/*-------------------------------------------    
+	BLOCK LEVEL
+-------------------------------------------*/
 body {
   padding: 2em;
   width: 1000px;
@@ -103,14 +80,40 @@ body {
   grid-column: span 3;
   grid-row: 1/2;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 548px) {
   .intro {
-    background-image: url(banneropaque.png);
-    background-size: 100% auto;
-    grid-column: span 3;
+    background-image: none;
   }
 }
 
+/*-------------------------------------------    
+	ANIMATIONS FOR INTRO
+-------------------------------------------*/
+.intro {
+  -webkit-animation-name: FADEY;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+}
+
+[role=article] {
+  -webkit-opacity: 0;
+  -webkit-animation-name: FADEY;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+}
+
+@keyframes FADEY {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .preamble, .mainsupporting, .participation, .benefits, .requirements {
   text-align: justify;
 }
@@ -141,6 +144,9 @@ body {
   }
 }
 
+/*-------------------------------------------    
+	ADDED CONTENT WITH CSS
+-------------------------------------------*/
 #zen-preamble, #zen-explanation, #zen-participation, #zen-benefits, #zen-requirements {
   position: relative;
 }
@@ -280,6 +286,9 @@ body {
   }
 }
 
+/*-------------------------------------------    
+	ANIMATIONS KEYFRAMES
+-------------------------------------------*/
 @keyframes appear {
   0% {
     opacity: 0;
@@ -333,18 +342,21 @@ body {
   transform: translateY(50px);
 }
 .wrapper .design-selection {
+  content: "";
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 95px;
   animation: image1 10s infinite alternate;
 }
 .wrapper .design-archives {
+  content: "";
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 95px;
   animation: image2 10s infinite alternate;
 }
 .wrapper .zen-resources {
+  content: "";
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 95px;

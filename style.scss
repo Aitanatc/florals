@@ -7,7 +7,9 @@
 @use "organisms";
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap');
 
-/* basic elements */
+/*-------------------------------------------    
+	BLOCK LEVEL
+-------------------------------------------*/
 //Body styling using radial-gradients that change size based on the large screen or small screen.
 body{
 	padding: 2em;
@@ -25,24 +27,46 @@ body{
 		background-size: 20px 20px;
 	}
 }
+
+// Banner styling for the website 
 .intro{ 
 	background-image: url( banneropaque.png);	
 	background-size: 100% auto;	
 	grid-column: span 3;
 	grid-row: 1/2;
-	@media screen and  (max-width: 700px){
-		background-image: url(banneropaque.png);
-		background-size: 100% auto;
-		grid-column: span 3;
+	@media screen and  (max-width: 548px){
+		background-image: none;	
 	}
 }
+/*-------------------------------------------    
+	ANIMATIONS FOR INTRO
+-------------------------------------------*/
+.intro { 
+	-webkit-animation-name: FADEY;
+	-webkit-animation-duration: 1s; 
+	-webkit-animation-timing-function: ease-in-out; 
+	-webkit-animation-iteration-count: 1;
+}
+[role="article"] {
+	-webkit-opacity: 0;
+	-webkit-animation-name: FADEY;
+	-webkit-animation-duration: 1s; 
+	-webkit-animation-timing-function: ease-in-out; 
+	-webkit-animation-delay: 0.5s;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-iteration-count: 1;
+}
+@keyframes FADEY {
+	0%	 { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+//Text align for website content
 .preamble, .mainsupporting, .participation, .benefits, .requirements{
 	text-align: justify;
 	h3{
 		text-align: left;
 	}
-	
-
 	@media screen and (max-width: 700px){
 		text-align: right;
 		p{
@@ -50,6 +74,7 @@ body{
 		}
 	}
 }
+//Content container divided into columns
 .page-wraher{
 	display: grid;
 	grid-template-columns: 22% 1fr 22%;
@@ -63,9 +88,13 @@ body{
 	}
 }
 
+/*-------------------------------------------    
+	ADDED CONTENT WITH CSS
+-------------------------------------------*/
 #zen-preamble, #zen-explanation, #zen-participation, #zen-benefits, #zen-requirements{
 	position: relative;
 }
+//Image positioning
 #zen-preamble::before {
 	@include atoms.side-image-left(url(singlerose.png), calc(0px - 230px));
 	animation: appear 10s linear infinite;
@@ -114,6 +143,11 @@ body{
 	}
 }
 
+/*-------------------------------------------    
+	ANIMATIONS KEYFRAMES
+-------------------------------------------*/
+
+//Animation for images in large screen
 @keyframes appear {
 	0% {
 		opacity: 0;
@@ -125,6 +159,8 @@ body{
 		opacity: 0;
 	  }
   }
+  
+//Animation for images in small screen
   @keyframes appear-down {
 	0% {
 		top: -10%;
@@ -137,7 +173,7 @@ body{
 	  }
   }
 
-
+//Pink  boxes at the bottom
 .sidebar{
 	grid-column: span 3;
 	@media screen and  (max-width: 700px){
@@ -170,22 +206,16 @@ body{
 			}
 		//Styling the flowers for the pink boxes
 			.design-selection {
-				background-repeat: no-repeat;
-				background-position: center bottom;
-				background-size: 95px;
-				animation: image1 10s infinite alternate;
+				@include atoms.box-flowers(image1 10s infinite alternate);
 			  }
+			  
 			  .design-archives {
-				background-repeat: no-repeat;
-				background-position: center bottom;
-				background-size: 95px;
-				animation: image2 10s infinite alternate;
+				@include atoms.box-flowers(image2 10s infinite alternate);
+
 			  }
 			  .zen-resources {
-				background-repeat: no-repeat;
-				background-position: center bottom;
-				background-size: 95px;
-				animation: image3 10s infinite alternate;
+				@include atoms.box-flowers(image3 10s infinite alternate);
+
 			  }
 			  //Animation for the flowers in the pink boxes
 			  @keyframes image1 {
@@ -206,6 +236,9 @@ body{
 				66%{background-image:url(peachpeony.png);}
 				100%{background-image:url(mediumpinkpeony.png);}
 			  }
+	
+			  
+	//Pink boxes hovering	  
 	@media screen and  (max-width: 700px){
 		display: grid;
 		grid-template-columns: 1fr;
