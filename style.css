@@ -21,6 +21,15 @@ h4 {
   margin: 0;
 }
 
+h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3E777A;
+  font-family: "Forum";
+  font-size: 4em;
+}
+
 h2 {
   color: #3E777A;
   font-weight: 400;
