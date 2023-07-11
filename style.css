@@ -1,6 +1,61 @@
 /* css Zen Garden*/
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
+h2,
+h4 {
+  font-family: "Courgette", cursive;
+  margin: 0;
+}
+
+h1 {
+  font: 300 4em "Forum";
+  color: #3E777A;
+  text-transform: uppercase;
+  margin: 0 0 0.5em;
+}
+
+h2 {
+  font-weight: 400;
+  color: #3E777A;
+}
+
+h3 {
+  font: 200 2.25em "Courgette", cursive;
+  padding: 0.5em 0 0.25em 0;
+}
+
+h4 {
+  font: 200 1.5em;
+  margin: 0.5em 0;
+}
+
+p {
+  font: 1em/1.5em "Barlow", sans-serif;
+  padding: 0.5em 0;
+  margin: 0;
+}
+
+li {
+  font-size: 1rem;
+  color: rgba(51, 55, 69, 0.9);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  position: relative;
+  bottom: 0px;
+  color: #3E777A;
+  text-decoration: none;
+  font-family: "Forum";
+  transition: bottom 0.2s;
+}
+a:hover {
+  bottom: 5px;
+}
+
 .summary a {
   color: #150606;
   font-family: "Courgette", cursive;
@@ -10,367 +65,41 @@
   text-align: right;
 }
 
+/* We should remove the white background here unless we want it on all of the paragraphs.
+.preamble {
+  background: rgba(255, 255, 255, 0.9);
+  // margin-left: -30%;
+}
+*/
 .intro {
   padding: 2%;
 }
 
-h2,
-h3,
-h4 {
-  font-family: "Courgette", cursive;
+* {
   margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #3E777A;
-  font-family: "Forum";
-  font-size: 4em;
-}
-
-h2 {
-  color: #3E777A;
-  font-weight: 400;
-  letter-spacing: 1px;
-  line-height: 1em;
-}
-
-h3 {
-  font-size: 2.25em;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 0.5em 0 0.25em 0;
-}
-
-p {
-  font-family: "Barlow", sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-  padding: 0.5em 0;
-  margin: 0;
-}
-
-a {
-  color: #3E777A;
-  text-decoration: none;
-  transition: border-color 0.2s ease-in-out;
-}
-
-a:hover {
-  border-color: #3E777A;
-}
-
-/*-------------------------------------------    
-	BLOCK LEVEL
--------------------------------------------*/
 body {
-  padding: 2em;
-  width: 1000px;
+  padding: 1em;
+  width: auto;
   margin: auto;
   background-color: #f8f5f9;
   background-image: radial-gradient(white 15%, transparent 20%), radial-gradient(white 15%, transparent 20%);
   background-size: 50px 50px;
   background-position: 0 0, 30px 30px;
 }
-@media screen and (max-width: 700px) {
-  body {
-    width: auto;
-    margin: auto;
-    padding: 1em;
-    background-size: 20px 20px;
-  }
-}
-
-.intro {
-  background-image: url(banneropaque.png);
-  background-size: 100% auto;
-  grid-column: span 3;
-  grid-row: 1/2;
-}
-@media screen and (max-width: 548px) {
-  .intro {
-    background-image: none;
-  }
-}
-
-/*-------------------------------------------    
-	ANIMATIONS FOR INTRO
--------------------------------------------*/
-.intro {
-  -webkit-animation-name: FADEY;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: 1;
-}
-
-[role=article] {
-  -webkit-opacity: 0;
-  -webkit-animation-name: FADEY;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-delay: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
-}
-
-@keyframes FADEY {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.preamble, .mainsupporting, .participation, .benefits, .requirements {
-  text-align: justify;
-}
-.preamble h3, .mainsupporting h3, .participation h3, .benefits h3, .requirements h3 {
-  text-align: left;
-}
-@media screen and (max-width: 700px) {
-  .preamble, .mainsupporting, .participation, .benefits, .requirements {
-    text-align: right;
-  }
-  .preamble p, .mainsupporting p, .participation p, .benefits p, .requirements p {
-    text-align: justify;
-  }
-}
 
 .page-wraher {
   display: grid;
   grid-template-columns: 22% 1fr 22%;
   grid-gap: 1em;
-}
-.page-wraher > .preamble, .page-wraher .mainsupporting, .page-wraher footer {
-  grid-column: 2/3;
-}
-@media screen and (max-width: 700px) {
-  .page-wraher {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/*-------------------------------------------    
-	ADDED CONTENT WITH CSS
--------------------------------------------*/
-#zen-preamble, #zen-explanation, #zen-participation, #zen-benefits, #zen-requirements {
-  position: relative;
-}
-
-#zen-preamble::before {
-  content: "";
-  background-image: url(singlerose.png);
-  background-repeat: no-repeat;
-  background-position: left center;
-  position: absolute;
-  top: 0;
-  left: -230px;
-  width: 100%;
-  height: 100%;
-  animation: appear 10s linear infinite;
-}
-@media screen and (max-width: 700px) {
-  #zen-preamble::before {
-    content: "";
-    background-image: url(singlerose.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    position: absolute;
-    top: 0;
-    left: -230px;
-    width: 100%;
-    height: 100%;
-    animation: appear-down 10s linear;
-  }
-}
-
-#zen-explanation::before {
-  content: "";
-  background-image: url(yellowflower.png);
-  background-repeat: no-repeat;
-  background-position: right center;
-  position: absolute;
-  top: 0;
-  right: -255px;
-  width: 100%;
-  height: 100%;
-  animation: appear 10s linear infinite;
-}
-@media screen and (max-width: 700px) {
-  #zen-explanation::before {
-    content: "";
-    background-image: url(yellowflower.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    position: absolute;
-    top: 0;
-    left: -260px;
-    width: 100%;
-    height: 100%;
-    animation: appear-down 10s linear;
-  }
-}
-
-#zen-participation::before {
-  content: "";
-  background-image: url(lightpinkpeony.png);
-  background-repeat: no-repeat;
-  background-position: left center;
-  position: absolute;
-  top: 0;
-  left: -260px;
-  width: 100%;
-  height: 100%;
-  animation: appear 10s linear infinite;
-}
-@media screen and (max-width: 700px) {
-  #zen-participation::before {
-    content: "";
-    background-image: url(lightpinkpeony.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    position: absolute;
-    top: 0;
-    left: -250px;
-    width: 100%;
-    height: 100%;
-    animation: appear-down 10s linear;
-  }
-}
-
-#zen-benefits::before {
-  content: "";
-  background-image: url(mediumpinkpeony.png);
-  background-repeat: no-repeat;
-  background-position: right center;
-  position: absolute;
-  top: 0;
-  right: -270px;
-  width: 100%;
-  height: 100%;
-  animation: appear 10s linear infinite;
-}
-@media screen and (max-width: 700px) {
-  #zen-benefits::before {
-    content: "";
-    background-image: url(mediumpinkpeony.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    position: absolute;
-    top: 0;
-    left: -250px;
-    width: 100%;
-    height: 100%;
-    animation: appear-down 10s linear;
-  }
-}
-
-#zen-requirements::before {
-  content: "";
-  background-image: url(LongFlower.png);
-  background-repeat: no-repeat;
-  background-position: left center;
-  position: absolute;
-  top: 0;
-  left: -320px;
-  width: 100%;
-  height: 100%;
-  animation: appear 10s linear infinite;
-}
-@media screen and (max-width: 700px) {
-  #zen-requirements::before {
-    content: "";
-    background-image: url(LongFlower.png);
-    background-repeat: no-repeat;
-    background-position: left center;
-    position: absolute;
-    top: 0;
-    left: -315px;
-    width: 100%;
-    height: 100%;
-    animation: appear-down 10s linear;
-  }
+  text-align: center;
 }
 
 /*-------------------------------------------    
 	ANIMATIONS KEYFRAMES
 -------------------------------------------*/
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes appear-down {
-  0% {
-    top: -10%;
-  }
-  50% {
-    top: 30%;
-  }
-  100% {
-    top: 0;
-  }
-}
-.sidebar {
-  grid-column: span 3;
-}
-@media screen and (max-width: 700px) {
-  .sidebar {
-    grid-column: span 2;
-  }
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  padding: 1em;
-  column-gap: 2em;
-  height: 350px;
-}
-.wrapper h3 {
-  text-align: center;
-  padding: 25px;
-}
-.wrapper .design-selection, .wrapper .design-archives, .wrapper .zen-resources {
-  background-color: #f2becb;
-  will-change: transform;
-  transition: transform 450ms;
-  border-radius: 0 0 25% 25%;
-}
-.wrapper .design-selection:hover, .wrapper .design-archives:hover, .wrapper .zen-resources:hover {
-  background-color: rgb(235, 232, 232);
-  transform: translateY(50px);
-}
-.wrapper .design-selection {
-  content: "";
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 95px;
-  animation: image1 10s infinite alternate;
-}
-.wrapper .design-archives {
-  content: "";
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 95px;
-  animation: image2 10s infinite alternate;
-}
-.wrapper .zen-resources {
-  content: "";
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 95px;
-  animation: image3 10s infinite alternate;
-}
 @keyframes image1 {
   0% {
     background-image: url(sunflower.png);
@@ -413,19 +142,268 @@ body {
     background-image: url(mediumpinkpeony.png);
   }
 }
-@media screen and (max-width: 700px) {
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes appear-down {
+  0% {
+    top: -10%;
+  }
+  50% {
+    top: 30%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes FADEY {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*-------------------------------------------    
+	ANIMATIONS 
+-------------------------------------------*/
+.intro {
+  -webkit-animation-name: FADEY;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+}
+
+[role=article] {
+  -webkit-opacity: 0;
+  -webkit-animation-name: FADEY;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+}
+
+/*-------------------------------------------    
+	ADDED CONTENT WITH CSS
+-------------------------------------------*/
+#zen-preamble::before {
+  content: "";
+  background-image: url(singlerose.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: left center;
+  left: -230px;
+  animation: appear 5s linear infinite;
+}
+
+#zen-explanation::before {
+  content: "";
+  background-image: url(yellowflower.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: right center;
+  right: -255px;
+  animation: appear 5s linear infinite;
+}
+
+#zen-participation::before {
+  content: "";
+  background-image: url(lightpinkpeony.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: left center;
+  left: -260px;
+  animation: appear 5s linear infinite;
+}
+
+#zen-benefits::before {
+  content: "";
+  background-image: url(mediumpinkpeony.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: right center;
+  right: -270px;
+  animation: appear 5s linear infinite;
+}
+
+#zen-requirements::before {
+  content: "";
+  background-image: url(LongFlower.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: left center;
+  left: -320px;
+  filter: drop-shadow(10px, 10px, 10px rgba(239, 235, 235, 0.6));
+  animation: appear 5s linear infinite;
+}
+
+.design-selection::before {
+  animation: image1 10s infinite alternate;
+}
+
+.design-archives::before {
+  animation: image2 10s infinite alternate;
+}
+
+.zen-resources::before {
+  animation: image3 10s infinite alternate;
+}
+
+/*-------------------------------------------    
+	INTRO 
+-------------------------------------------*/
+.intro {
+  grid-column: 2/3;
+  background-image: url(banneropaque.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+/*-------------------------------------------    
+	PREAMBLE 
+-------------------------------------------*/
+.preamble {
+  grid-column: 2/3;
+  position: relative;
+}
+
+/*-------------------------------------------    
+	MAINSUPPORTING 
+-------------------------------------------*/
+.mainsupporting {
+  grid-column: 2/3;
+}
+
+.explanation,
+.participation,
+.benefits,
+.requirements {
+  position: relative;
+}
+
+/*-------------------------------------------    
+	SIDEBAR 
+-------------------------------------------*/
+.sidebar {
+  grid-column: 1/-1;
+}
+
+.wrapper {
+  display: block;
+}
+
+.design-selection,
+.design-archives,
+.zen-resources {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 95px;
+}
+.design-selection li,
+.design-archives li,
+.zen-resources li {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.design-selection::before,
+.design-archives::before,
+.zen-resources::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  position: relative;
+  top: 0px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+
+h3.select,
+h3.archives,
+h3.resources {
+  font: 3rem "Forum";
+  text-align: center;
+  padding-bottom: 25px;
+  color: black;
+}
+
+.design-selection nav ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+}
+
+div.design-selection li {
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+a.design-name {
+  font-weight: bold;
+}
+
+/*-------------------------------------------    
+	LARGER SCREEN
+-------------------------------------------*/
+@media screen and (min-width: 700px) {
+  body {
+    padding: 2em;
+    width: 1000px;
+  }
+  .page-wraher {
+    grid-template-columns: 22% 1fr 22%;
+  }
   .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 10px;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
   }
-  .wrapper .design-selection, .wrapper .design-archives, .wrapper .zen-resources {
-    border-radius: 0 50% 50% 0;
-    background-position: left top;
+  h3.select,
+  h3.archives,
+  h3.resources {
+    font: 2rem "Forum";
+    text-align: center;
+    padding-bottom: 25px;
+    color: black;
   }
-  .wrapper .design-selection:hover, .wrapper .design-archives:hover, .wrapper .zen-resources:hover {
-    background-color: rgb(235, 232, 232);
-    transform: translateX(50px);
+  div.design-selection,
+  div.design-archives,
+  div.zen-resources {
+    text-align: left;
+  }
+  div.design-selection li,
+  div.design-archives li,
+  div.zen-resources li {
+    font-size: 1rem;
   }
 }
 
