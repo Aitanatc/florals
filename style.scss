@@ -112,7 +112,7 @@ body{
 
 #zen-requirements::before{
 	@include atoms.side-image-left(url(LongFlower.png), calc(0px - 320px));
-	filter: drop-shadow(10px, 10px, 10px rgba(239, 235, 235, 0.6));
+	filter: drop-shadow(10px 10px 10px rgba(239, 235, 235, 0.6));
 	animation: appear 5s linear infinite;
 }
 .design-selection::before {

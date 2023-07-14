@@ -246,7 +246,7 @@ body {
   height: 100%;
   background-position: left center;
   left: -320px;
-  filter: drop-shadow(10px, 10px, 10px rgba(239, 235, 235, 0.6));
+  filter: drop-shadow(10px 10px 10px rgba(239, 235, 235, 0.6));
   animation: appear 5s linear infinite;
 }
 
