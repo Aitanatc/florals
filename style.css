@@ -60,12 +60,6 @@ a:hover {
   text-align: right;
 }
 
-/* We should remove the white background here unless we want it on all of the paragraphs.
-.preamble {
-  background: rgba(255, 255, 255, 0.9);
-  // margin-left: -30%;
-}
-*/
 .intro {
   padding: 2%;
 }
@@ -171,20 +165,20 @@ body {
 	ANIMATIONS 
 -------------------------------------------*/
 .intro {
-  -webkit-animation-name: FADEY;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: 1;
+  animation-name: FADEY;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
 }
 
 [role=article] {
-  -webkit-opacity: 0;
-  -webkit-animation-name: FADEY;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-delay: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: 1;
+  opacity: 0;
+  animation-name: FADEY;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 /*-------------------------------------------    
@@ -378,6 +372,46 @@ a.designer-name {
   font-weight: 100;
 }
 
+/*-------------------------------------------    
+		SMALL SCREEN
+-------------------------------------------*/
+@media screen and (max-width: 499px) {
+  body {
+    max-width: 499px;
+    margin: 0 auto;
+    padding: 1em;
+    background-size: 20px 20px;
+  }
+  .page-wraher {
+    display: block;
+  }
+  .intro {
+    background-image: url(banneropaque.png);
+    background-size: auto;
+    padding: 5px;
+  }
+  .preamble,
+  .mainsupporting,
+  .participation,
+  .benefits,
+  .requirements {
+    text-align: center;
+  }
+  .preamble p,
+  .mainsupporting p,
+  .participation p,
+  .benefits p,
+  .requirements p {
+    text-align: justify;
+  }
+  #zen-explanation::before,
+  #zen-preamble::before,
+  #zen-participation::before,
+  #zen-benefits::before,
+  #zen-requirements::before {
+    background-image: none;
+  }
+}
 /*-------------------------------------------    
 		MEDIUM SCREEN
 -------------------------------------------*/
