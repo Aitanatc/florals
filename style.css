@@ -1,22 +1,18 @@
 /* css Zen Garden*/
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap");
-h2,
-h4 {
-  font-family: "Courgette", cursive;
-  margin: 0;
-}
-
 h1 {
   font: 300 4em "Forum";
-  color: #3E777A;
+  color: #3d8589;
   text-transform: uppercase;
   margin: 0 0 0.5em;
 }
 
 h2 {
   font-weight: 400;
-  color: #3E777A;
+  font-family: "Courgette", cursive;
+  color: #3d8589;
+  margin: 0;
 }
 
 h3 {
@@ -25,7 +21,7 @@ h3 {
 }
 
 h4 {
-  font: 200 1.5em;
+  font: 200 1.5em "Courgette", cursive;
   margin: 0.5em 0;
 }
 
@@ -36,7 +32,6 @@ p {
 }
 
 li {
-  font-size: 1rem;
   color: rgba(51, 55, 69, 0.9);
 }
 
@@ -47,7 +42,7 @@ ul {
 a {
   position: relative;
   bottom: 0px;
-  color: #3E777A;
+  color: #3d8589;
   text-decoration: none;
   font-family: "Forum";
   transition: bottom 0.2s;
@@ -292,6 +287,18 @@ body {
   grid-column: 2/3;
   position: relative;
 }
+.preamble::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 250px;
+  background-image: linear-gradient(24deg, hotpink, pink, rgb(186, 131, 204));
+  background-size: cover;
+  -webkit-mask: url(peony.png);
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
 
 /*-------------------------------------------    
 	MAINSUPPORTING 
@@ -312,6 +319,7 @@ body {
 -------------------------------------------*/
 .sidebar {
   grid-column: 1/-1;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), #f4dee3);
 }
 
 .wrapper {
@@ -322,15 +330,6 @@ body {
 .design-archives,
 .zen-resources {
   text-align: center;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 95px;
-}
-.design-selection li,
-.design-archives li,
-.zen-resources li {
-  font-size: 2rem;
-  margin-bottom: 1rem;
 }
 .design-selection::before,
 .design-archives::before,
@@ -346,41 +345,87 @@ body {
   background-position: center bottom;
   background-size: contain;
 }
+.design-selection li,
+.design-archives li,
+.zen-resources li {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
 
 h3.select,
 h3.archives,
 h3.resources {
-  font: 3rem "Forum";
+  font: 2.5rem "Forum";
   text-align: center;
   padding-bottom: 25px;
   color: black;
 }
 
-.design-selection nav ul {
-  display: flex;
-  flex-direction: column;
-  font-size: 2em;
-}
-
-div.design-selection li {
-  margin-bottom: 2rem;
+.design-selection li {
   color: #aaa;
+  font-style: italic;
 }
 
 a.design-name {
-  font-weight: bold;
+  display: block;
+  font-size: 1.75rem;
+  font-style: normal;
+}
+
+a.designer-name {
+  font-style: normal;
+  font-weight: 100;
 }
 
 /*-------------------------------------------    
-	LARGER SCREEN
+		MEDIUM SCREEN
 -------------------------------------------*/
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
+  .preamble {
+    grid-column: 2/3;
+    position: relative;
+  }
+  .preamble::after {
+    content: none;
+  }
+  .sidebar {
+    grid-column: 1/-1;
+    background-image: none;
+  }
+  .wrapper {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+  }
+  .design-selection,
+  .design-archives,
+  .zen-resources {
+    text-align: left;
+  }
+  .design-selection ul,
+  .design-archives ul,
+  .zen-resources ul {
+    background-color: #f4dee3;
+    padding: 10px 20px;
+    border-radius: 10px;
+    will-change: transform;
+    transition: transform 450ms;
+  }
+  .design-selection ul:hover,
+  .design-archives ul:hover,
+  .zen-resources ul:hover {
+    background-color: lightgray;
+    transform: translateY(25px);
+  }
+}
+/*-------------------------------------------    
+	LARGE SCREEN
+-------------------------------------------*/
+@media screen and (min-width: 1200px) {
   body {
     padding: 2em;
     width: 1000px;
-  }
-  .page-wraher {
-    grid-template-columns: 22% 1fr 22%;
   }
   .wrapper {
     display: flex;
@@ -395,15 +440,13 @@ a.design-name {
     padding-bottom: 25px;
     color: black;
   }
-  div.design-selection,
-  div.design-archives,
-  div.zen-resources {
-    text-align: left;
-  }
-  div.design-selection li,
-  div.design-archives li,
-  div.zen-resources li {
+  .design-selection li,
+  .design-archives li,
+  .zen-resources li {
     font-size: 1rem;
+  }
+  a.design-name {
+    font-size: 1.25rem;
   }
 }
 
