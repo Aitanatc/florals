@@ -202,7 +202,7 @@ body{
 h3.select, 
 h3.archives, 
 h3.resources {
-	font: 2.5rem variables.$font-title;
+	font: 2rem variables.$font-title;
 	text-align: center;
 	padding-bottom: 25px;
 	color: black;
@@ -213,7 +213,7 @@ h3.resources {
 }
 a.design-name {
 	display: block;
-	font-size: 1.75rem;
+	font-size: 1.5rem;
 	font-style: normal;
 }
 a.designer-name {
@@ -261,6 +261,12 @@ a.designer-name {
 	#zen-requirements::before {
 	  background-image: none;
 	}
+	a.design-name {
+		font-size: 1.25rem;
+	}
+  	a.designer-name {
+    	font-size: 1.05rem;
+  	}
 }
 /*-------------------------------------------    
 		MEDIUM SCREEN
@@ -298,6 +304,9 @@ a.designer-name {
 			}
 		}
     }
+	a.design-name {
+		font-size: 1.25rem;
+	}
 }
 /*-------------------------------------------    
 	LARGE SCREEN
@@ -307,22 +316,13 @@ a.designer-name {
 		padding: 2em;
 	    width: 1000px;
 	}
-	.page-wraher {
-		// grid-template-columns: 22% 1fr 22%;	
-	}
+	
 	.wrapper {
 		display: flex;
 	    gap: 2rem;
 	    justify-content: space-around;
 	}
-	h3.select, 
-    h3.archives, 
-    h3.resources {
-		font: 2rem variables.$font-title;
-	    text-align: center;
-	    padding-bottom: 25px;
-	    color: black;
-    }
+	
 	.design-selection,
     .design-archives,
     .zen-resources {
@@ -331,6 +331,6 @@ a.designer-name {
 		}
     }
 	a.design-name {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 	}
 }

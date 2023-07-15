@@ -350,7 +350,7 @@ body {
 h3.select,
 h3.archives,
 h3.resources {
-  font: 2.5rem "Forum";
+  font: 2rem "Forum";
   text-align: center;
   padding-bottom: 25px;
   color: black;
@@ -363,7 +363,7 @@ h3.resources {
 
 a.design-name {
   display: block;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-style: normal;
 }
 
@@ -411,6 +411,12 @@ a.designer-name {
   #zen-requirements::before {
     background-image: none;
   }
+  a.design-name {
+    font-size: 1.25rem;
+  }
+  a.designer-name {
+    font-size: 1.05rem;
+  }
 }
 /*-------------------------------------------    
 		MEDIUM SCREEN
@@ -452,6 +458,9 @@ a.designer-name {
     background-color: lightgray;
     transform: translateY(25px);
   }
+  a.design-name {
+    font-size: 1.25rem;
+  }
 }
 /*-------------------------------------------    
 	LARGE SCREEN
@@ -466,21 +475,13 @@ a.designer-name {
     gap: 2rem;
     justify-content: space-around;
   }
-  h3.select,
-  h3.archives,
-  h3.resources {
-    font: 2rem "Forum";
-    text-align: center;
-    padding-bottom: 25px;
-    color: black;
-  }
   .design-selection li,
   .design-archives li,
   .zen-resources li {
     font-size: 1rem;
   }
   a.design-name {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
