@@ -68,15 +68,25 @@ body{
 	ANIMATIONS 
 -------------------------------------------*/
 .intro { 
+<<<<<<< HEAD
 	animation-name: prelude;
+=======
+	animation-name: FADEY;
+>>>>>>> 24398d499faa7a99a2b8699a0383ef5f13b30002
 	animation-duration: 1s; 
 	animation-timing-function: ease-in-out; 
 	animation-iteration-count: 1;
 }
 
+<<<<<<< HEAD
 .preamble {
 	opacity: 0;
 	animation-name: prelude;
+=======
+[role="article"] {
+	opacity: 0;
+	animation-name: FADEY;
+>>>>>>> 24398d499faa7a99a2b8699a0383ef5f13b30002
 	animation-duration: 1s; 
 	animation-timing-function: ease-in-out; 
 	animation-delay: 0.5s;
@@ -122,7 +132,7 @@ body{
 
 #zen-requirements::before{
 	@include atoms.side-image-left(url(LongFlower.png), calc(0px - 320px));
-	filter: drop-shadow(10px, 10px, 10px rgba(239, 235, 235, 0.6));
+	filter: drop-shadow(10px 10px 10px rgba(239, 235, 235, 0.6));
 	animation: appear 5s linear infinite;
 }
 .design-selection::before {
@@ -200,7 +210,7 @@ body{
 h3.select, 
 h3.archives, 
 h3.resources {
-	font: 2.5rem variables.$font-title;
+	font: 2rem variables.$font-title;
 	text-align: center;
 	padding-bottom: 25px;
 	color: black;
@@ -211,12 +221,60 @@ h3.resources {
 }
 a.design-name {
 	display: block;
-	font-size: 1.75rem;
+	font-size: 1.5rem;
 	font-style: normal;
 }
 a.designer-name {
 	font-style: normal;
 	font-weight: 100;
+}
+
+/*-------------------------------------------    
+		SMALL SCREEN
+-------------------------------------------*/
+@media screen and (max-width: 499px) {
+
+	body {
+	  max-width: 499px;
+	  margin: 0 auto;
+	  padding: 1em;
+	  background-size: 20px 20px;
+	}
+	.page-wraher {
+	  display: block;
+	}
+	.intro {
+	  background-image: url(banneropaque.png);
+	  background-size: auto;
+	  padding: 5px;
+	}
+	.preamble, 
+	.mainsupporting, 
+	.participation, 
+	.benefits, 
+	.requirements {
+	  text-align: center;
+	}
+	.preamble p, 
+	.mainsupporting p, 
+	.participation p, 
+	.benefits p, 
+	.requirements p {
+	  text-align: justify;
+	}
+	#zen-explanation::before, 
+	#zen-preamble::before, 
+	#zen-participation::before, 
+	#zen-benefits::before, 
+	#zen-requirements::before {
+	  background-image: none;
+	}
+	a.design-name {
+		font-size: 1.25rem;
+	}
+  	a.designer-name {
+    	font-size: 1.05rem;
+  	}
 }
 /*-------------------------------------------    
 		MEDIUM SCREEN
@@ -254,6 +312,9 @@ a.designer-name {
 			}
 		}
     }
+	a.design-name {
+		font-size: 1.25rem;
+	}
 }
 /*-------------------------------------------    
 	LARGE SCREEN
@@ -263,22 +324,13 @@ a.designer-name {
 		padding: 2em;
 	    width: 1000px;
 	}
-	.page-wraher {
-		// grid-template-columns: 22% 1fr 22%;	
-	}
+	
 	.wrapper {
 		display: flex;
 	    gap: 2rem;
 	    justify-content: space-around;
 	}
-	h3.select, 
-    h3.archives, 
-    h3.resources {
-		font: 2rem variables.$font-title;
-	    text-align: center;
-	    padding-bottom: 25px;
-	    color: black;
-    }
+	
 	.design-selection,
     .design-archives,
     .zen-resources {
@@ -287,6 +339,6 @@ a.designer-name {
 		}
     }
 	a.design-name {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 	}
 }
