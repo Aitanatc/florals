@@ -5,27 +5,6 @@
 @use "molecules";
 @use "organisms";
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Courgette&family=Forum&display=swap');
-
-* { margin: 0; padding: 0; }
-body{
-	//Body styling using radial-gradients that change size based on the large screen or small screen.
-	padding: 1em;
-	width: auto;
-	margin: auto;
-	background-color: variables.$background-color;
-	background-image: radial-gradient(white 15%, transparent 20%),
-	  radial-gradient(white 15%, transparent 20%);
-	background-size: 50px 50px;
-	background-position: 0 0, 30px 30px;
-}
-.page-wraher {
-	display: grid;
-	grid-template-columns: 22% 1fr 22%;
-	grid-gap: 1em;
-	text-align: center;
-}
-
-
 /*-------------------------------------------    
 	ANIMATIONS KEYFRAMES
 -------------------------------------------*/
@@ -62,39 +41,25 @@ body{
 	100% { opacity: 1; }
 }
 
-
-
 /*-------------------------------------------    
 	ANIMATIONS 
 -------------------------------------------*/
 .intro { 
-<<<<<<< HEAD
 	animation-name: prelude;
-=======
-	animation-name: FADEY;
->>>>>>> 24398d499faa7a99a2b8699a0383ef5f13b30002
 	animation-duration: 1s; 
 	animation-timing-function: ease-in-out; 
 	animation-iteration-count: 1;
 }
 
-<<<<<<< HEAD
 .preamble {
 	opacity: 0;
 	animation-name: prelude;
-=======
-[role="article"] {
-	opacity: 0;
-	animation-name: FADEY;
->>>>>>> 24398d499faa7a99a2b8699a0383ef5f13b30002
 	animation-duration: 1s; 
 	animation-timing-function: ease-in-out; 
 	animation-delay: 0.5s;
 	animation-fill-mode: forwards;
 	animation-iteration-count: 1;
 }
-
-
 
 /*-------------------------------------------    
 	ADDED CONTENT WITH CSS
@@ -111,29 +76,51 @@ body{
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
 }
-#zen-preamble::before {
-	@include atoms.side-image-left(url(singlerose.png), calc(0px - 230px));
-	animation: appear 5s linear infinite;
-}
-
-#zen-explanation::before {
-	@include atoms.side-image-right(url(yellowflower.png), calc(0px - 255px));
-	animation: appear 5s linear infinite;
-}
-
-#zen-participation::before{
-	@include atoms.side-image-left(url(lightpinkpeony.png), calc(0px - 260px));
-	animation: appear 5s linear infinite;
-}
-#zen-benefits::before{
-	@include atoms.side-image-right(url(mediumpinkpeony.png), calc(0px - 270px));
-	animation: appear 5s linear infinite;
-}
-
-#zen-requirements::before{
-	@include atoms.side-image-left(url(LongFlower.png), calc(0px - 320px));
-	filter: drop-shadow(10px 10px 10px rgba(239, 235, 235, 0.6));
-	animation: appear 5s linear infinite;
+@media screen and  (min-width: 499px) {
+	#zen-preamble::before {
+		@include atoms.side-image-left(url(singlerose.png), calc(0px - 230px));
+			animation: appear-down 10s linear;
+		@media screen and  (min-width: 1200px){
+			@include atoms.side-image-left(url(singlerose.png), calc(0px - 230px));
+			animation: appear 5s linear infinite;
+		}
+	}
+	
+	#zen-explanation::before {
+		@include atoms.side-image-left(url(yellowflower.png), calc(0px - 260px));
+		animation: appear-down 10s linear;
+		@media screen and  (min-width: 1200px) {
+			@include atoms.side-image-right(url(yellowflower.png), calc(0px + 255px));
+			animation: appear 5s linear infinite;
+		}
+	}
+	
+	#zen-participation::before{
+		@include atoms.side-image-left(url(lightpinkpeony.png), calc(0px - 250px));
+		animation: appear-down 10s linear;
+		@media screen and  (min-width: 1200px) {
+			@include atoms.side-image-left(url(lightpinkpeony.png), calc(0px - 260px));
+			animation: appear 5s linear infinite;
+		}
+	}
+	#zen-benefits::before{
+		@include atoms.side-image-left(url(mediumpinkpeony.png), calc(0px - 250px));
+		animation: appear-down 10s linear;
+		@media screen and  (min-width: 1200px) {
+			@include atoms.side-image-right(url(mediumpinkpeony.png), calc(0px + 270px));
+			animation: appear 5s linear infinite;
+		}
+	}
+	
+	#zen-requirements::before{
+		@include atoms.side-image-left(url(LongFlower.png), calc(0px - 315px));
+		animation: appear-down 10s linear;
+		@media screen and  (min-width: 1200px) {
+			@include atoms.side-image-left(url(LongFlower.png), calc(0px - 320px));
+			filter: drop-shadow(10px 10px 10px rgba(239, 235, 235, 0.6));
+			animation: appear 5s linear infinite;
+		}
+	}
 }
 .design-selection::before {
 	animation: image1 10s infinite alternate;
@@ -146,13 +133,36 @@ body{
 }
 
 /*-------------------------------------------    
+	SMALL SCREEN
+-------------------------------------------*/
+* { margin: 0; padding: 0; }
+body{
+	//Body styling using radial-gradients that change size based on the large screen or small screen.
+	width: auto;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 1em;
+	// margin: auto;
+	background-color: variables.$background-color;
+	background-image: radial-gradient(white 15%, transparent 20%),
+	  radial-gradient(white 15%, transparent 20%);
+	background-size: 20px 20px;
+	background-position: 0 0, 30px 30px;
+}
+.page-wraher {
+	display: block;
+	text-align: center;
+}
+
+/*-------------------------------------------    
 	INTRO 
 -------------------------------------------*/
 .intro {
 	grid-column: 2/3;
 	background-image: url(banneropaque.png);	
 	background-repeat: no-repeat;
-	background-size: 100% auto;	
+	background-size: auto;
+	padding: 5px;
 	grid-column: 1/-1;
 	grid-row: 1/2;
 }
@@ -162,18 +172,28 @@ body{
 .preamble {
 	grid-column: 2/3;
 	position: relative;
+	text-align: center;
 }
 /*-------------------------------------------    
 	MAINSUPPORTING 
--------------------------------------------*/
+-------------------------------------------*/ 
 .mainsupporting {
 	grid-column: 2/3;
+	text-align: center;
 }
 .explanation,
 .participation,
 .benefits,
 .requirements {
 	position: relative;
+	text-align: center;
+}
+.preamble p, 
+.mainsupporting p, 
+.participation p, 
+.benefits p, 
+.requirements p {
+	text-align: justify;
 }
 /*-------------------------------------------    
 	SIDEBAR 
@@ -181,6 +201,7 @@ body{
 .sidebar {
 	grid-column: 1/-1;
 	background-image: linear-gradient(180deg,  #ffffff00, variables.$accent3);
+	padding-bottom: 2rem;
 }
 .wrapper {
 	display: block;
@@ -221,65 +242,26 @@ h3.resources {
 }
 a.design-name {
 	display: block;
-	font-size: 1.5rem;
+	// font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-style: normal;
 }
 a.designer-name {
 	font-style: normal;
 	font-weight: 100;
-}
-
-/*-------------------------------------------    
-		SMALL SCREEN
--------------------------------------------*/
-@media screen and (max-width: 499px) {
-
-	body {
-	  max-width: 499px;
-	  margin: 0 auto;
-	  padding: 1em;
-	  background-size: 20px 20px;
-	}
-	.page-wraher {
-	  display: block;
-	}
-	.intro {
-	  background-image: url(banneropaque.png);
-	  background-size: auto;
-	  padding: 5px;
-	}
-	.preamble, 
-	.mainsupporting, 
-	.participation, 
-	.benefits, 
-	.requirements {
-	  text-align: center;
-	}
-	.preamble p, 
-	.mainsupporting p, 
-	.participation p, 
-	.benefits p, 
-	.requirements p {
-	  text-align: justify;
-	}
-	#zen-explanation::before, 
-	#zen-preamble::before, 
-	#zen-participation::before, 
-	#zen-benefits::before, 
-	#zen-requirements::before {
-	  background-image: none;
-	}
-	a.design-name {
-		font-size: 1.25rem;
-	}
-  	a.designer-name {
-    	font-size: 1.05rem;
-  	}
+	font-size: 1.05rem;
 }
 /*-------------------------------------------    
 		MEDIUM SCREEN
 -------------------------------------------*/
-@media screen and  (min-width: 768px) {
+@media screen and  (min-width: 499px) {
+	.page-wraher {
+		display: grid;
+		grid-template-columns: 40% 1fr;
+	}
+	.intro {
+		background-size: 100% auto;	
+	}
 	.preamble {
 		grid-column: 2/3;
 		position: relative;
@@ -324,7 +306,12 @@ a.designer-name {
 		padding: 2em;
 	    width: 1000px;
 	}
-	
+	.page-wraher {
+		display: grid;
+		grid-template-columns: 22% 1fr 22%;
+		grid-gap: 1em;
+		// text-align: center;
+	}
 	.wrapper {
 		display: flex;
 	    gap: 2rem;
